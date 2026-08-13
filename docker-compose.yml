@@ -35,11 +35,11 @@ services:
     volumes:
       - db-data:/var/lib/mysql
       - ./database/freeitsm.sql:/docker-entrypoint-initdb.d/01-schema.sql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+    #healthcheck:
+    #  test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+    #  interval: 5s
+    #  timeout: 5s
+    #  retries: 10
 
 volumes:
   db-data:

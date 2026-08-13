@@ -14,6 +14,10 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 # Allow .htaccess overrides
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
+# Añadir ServerName localhost
+RUN echo 'ServerName localhost' >> /etc/apache2/apache2.conf
+
+
 # Copy application files
 COPY . /var/www/html/
 

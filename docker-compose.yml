@@ -17,7 +17,7 @@ services:
       # cookie is issued without its Secure flag. Leave it off if nothing fronts the
       # container — X-Forwarded-Proto is client-settable, so it must never be trusted
       # by default.
-       - TRUST_PROXY_HTTPS=1
+      # - TRUST_PROXY_HTTPS=1
     volumes:
       - attachments:/var/www/html/tickets/attachments
       - cm-attachments:/var/www/html/change-management/attachments
